@@ -40,6 +40,7 @@
 
 ## Available blueprints
 Currently there is only one endpoint feel free to PR new ones.
+
 1. `merng [version]/[endpoint]` - Generates a endpoint including express route, controller and model
 
 ## Contributors
@@ -49,7 +50,7 @@ Currently there is only one endpoint feel free to PR new ones.
 ## License
 MIT License
 
-Copyright (c) 2016 Francisco Lourenço & Daniel Wehner
+Copyright (c) 2016 Pierre Humberdroz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
