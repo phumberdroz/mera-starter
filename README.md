@@ -17,11 +17,12 @@
 ```
   npm install -g mern-cli
   git clone https://github.com/phumberdroz/mera-starter.git project_name
-  cd your_new_app
+  cd project_name
   npm install
   npm start
 ```
 
+You can now visit localhost:8000/v1/posts to comfirm it is running.
 
 ## Available commands
 
