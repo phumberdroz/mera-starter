@@ -1,0 +1,24 @@
+mimport { Router } from 'express';
+import * as <%= helpers.capitalize(name) %>Controller from '../controllers/<%= name %>.controller';
+import dummyData from './<%= helpers.capitalize(name) %>.dummyData';
+const router = new Router();
+
+
+// Get all <%= helpers.capitalize(name) %>
+router.route('/<%= name %>').get(<%= helpers.capitalize(name) %>Controller.get<%= helpers.capitalize(name) %>s);
+
+// Get one <%= helpers.capitalize(name) %>
+router.route('/<%= name %>/:id').get(<%= helpers.capitalize(name) %>Controller.getOne<%= helpers.capitalize(name) %>);
+
+
+// Add a new <%= helpers.capitalize(name) %>
+router.route('/<%= name %>').post(<%= helpers.capitalize(name) %>Controller.add<%= helpers.capitalize(name) %>);
+
+// Update a <%= helpers.capitalize(name) %>
+router.route('/<%= name %>/:id').update(<%= helpers.capitalize(name) %>Controller.update<%= helpers.capitalize(name) %>);
+
+// Delete a <%= helpers.capitalize(name) %> by id
+router.route('/<%= name %>/:id').delete(<%= helpers.capitalize(name) %>Controller.delete<%= helpers.capitalize(name) %>);
+
+
+export default router;

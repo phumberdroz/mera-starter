@@ -1,0 +1,56 @@
+import <%= helpers.capitalize(name) %> from './<%= name %>.model';
+
+export function get<%= helpers.capitalize(name) %>s(req, res) {
+  <%= helpers.capitalize(name) %>.find().exec((err, <%= name %>s) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ <%= name %>s });
+  });
+}
+
+export function get<%= helpers.capitalize(name) %>(req, res) {
+  <%= helpers.capitalize(name) %>.findById(req.params.id, (err, <%= name %>) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ <%= name %> });
+});
+}
+
+export function add<%= helpers.capitalize(name) %>(req, res) {
+  if(!req.body.<%= name %>) {
+    res.status(403).end();
+  }
+
+  const new<%= helpers.capitalize(name) %> = new <%= helpers.capitalize(name)%>(req.body.<%= name %>);
+  new <%= helpers.capitalize(name) %>.save((err, saved) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({<%= helpers.capitalize(name) %>: saved});
+  });
+
+}
+
+export function update<%= helpers.capitalize(name) %>(req, res) {
+  if(!req.body.<%= name %>) {
+    res.status(403).end();
+  }
+<%= helpers.capitalize(name) %>.findByIdAndUpdate(req.params.id, req.body.<%= name %>, (err, <%= name %>) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ <%= name %>s });
+});
+}
+
+export function delete<%= helpers.capitalize(name) %>(req, res) {
+  <%= helpers.capitalize(name)%>.findByIdAndRemove(req.params.id, function(err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).end();
+    }
+  })
+}

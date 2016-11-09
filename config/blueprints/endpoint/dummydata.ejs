@@ -1,0 +1,22 @@
+import <%= helpers.capitalize(name) %>from './<%= name %>.model';
+
+export default function () {
+  <%= helpers.capitalize(name) %>.count().exec((err, count) => {
+      if (count > 0) {
+        return;
+      }
+
+      const entry1 = new <%= helpers.capitalize(name) %>({
+        //add some demo data here
+      });
+      const entry2 = new <%= helpers.capitalize(name) %>({
+        //add some demo data here
+      });
+
+      <%= helpers.capitalize(name) %>.create([entry1, entry2], ( error ) => {
+        if (!error) {
+          // console.log('ready to go....');
+        }
+      });
+    });
+}

@@ -1,0 +1,31 @@
+{
+  "blueprints": [
+    {
+      "name": "endpoint",
+      "description": "Generates a endpoint including express route, controller, model",
+      "usage": "endpoint [verion]/[endpoint-name]",
+      "files": [
+        {
+          "blueprint-path": "config/blueprints/endpoint/controller.ejs",
+          "parent-path": "<%= helpers.capitalize(parent) %>",
+          "target-path": "<%= name %>/<%= name %>.controller.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/endpoint/express-route.ejs",
+          "parent-path": "<%= helpers.capitalize(parent) %>",
+          "target-path": "<%= name %>/<%= name %>.routes.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/endpoint/model.ejs",
+          "parent-path": "<%= helpers.capitalize(parent) %>",
+          "target-path": "<%= name %>/<%= name %>.model.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/endpoint/dummydata.ejs",
+          "parent-path": "<%= helpers.capitalize(parent) %>",
+          "target-path": "<%= name %>/<%= name %>.dummyData.js"
+        }
+      ]
+    }
+  ]
+}
